@@ -92,12 +92,27 @@ style=numeric
   array of languages, each with their own lexicon, rules regarding grammatical construction,
   word ordering and gendering, etc.
 
-  One approach to tackling this problem is to abstract away from the level of languages
-  and to deal with how the human brain processes speech sounds.
+  Despite all this variation, every human language is intelligible to those that speak it.
+  Indeed, the ability to learn langauges outside of one's native langauge points to the
+  universality of the mechanisms on which speech comprehension is built. Fundamentally,
+  langauge is a process of encoding some information into an acoustic signal that can
+  be transmitted and then easily received and decoded by others. All languages rely on
+  the human vocal system for transmission and the human auditory system for receipt
+  and therefore share some fundamental properties. These include the quasi-periodic
+  properties of langauge, as well as the hierarchical structure that defines all
+  grammars. Without a particular cadence, spoken language becomes unintelligible,
+  and without the hierarchical structure that relates sounds to words to sentences,
+  it becomes unintelligible.
+
+  Therefore, the approach to understanding the mechanisms of speech comprehension
+  is to abstract away from the level of languages and to deal with how the human
+  brain processes speech sounds, and how these speech sounds are then related to one
+  another to form the hierarchical structure of a language.
   While there may be a huge diversity of speech sounds and an almost infinite number of ways
   to combine these sounds into words, all speech sounds can be represented as
   complex acoustic signals which are received by the cells inside the ear
-  and eventually processed by the same brain areas. So, what are the properties of human speech?
+  and eventually processed by the same brain areas. So, we turn now to examining the
+  features of human speech.
 
 
   \begin{figure}
@@ -429,7 +444,7 @@ style=numeric
     There exist a number of neural rhythms that are innately present in the human brain. Roughly
     speaking, these are divided into $\alpha$ (8 - 12 Hz), $\beta$ (12 - 30 Hz),
     $\theta$ (4 - 8 Hz), $\delta$ (1 - 4 Hz),
-    and $\gamma$ (30 - 80 Hz) \cite{Muresan2008,Rangaswamy2002}. These are roughly divided by
+    $\gamma$ (30 - 80 Hz), and high $\gamma$ (80 - 150 Hz) \cite{Muresan2008,Rangaswamy2002}. These are roughly divided by
     the frequency of the oscillations and their suspected behavioral correlates. There is clearly
     overlap between these categorizations and it is difficult to make very clear distinctions between
     the various classes of neural oscillations. Despite this, there are some clear behavioral correlates
@@ -544,12 +559,32 @@ style=numeric
 
   \subsection{Envelope Following and Brain Rhythms}
 
-    The fact that cortical neurons track the power envelope of speech signals is now well-known and
+    The fact that cortical neurons track the amplitude envelope of speech signals is now well-known and
     is considered an important part of the speech processing pathway. But, the interaction between
-    natural cortical rhythms (discussed in Section \ref{innateBrainRhythms}) and the envelope follwing
-    response is still not completely understood. The most popular theory is currently that speech signals
-    are essentially a quasi-rhythmic input signals and their envelope is tracked by a set of neurons in
-    the cortex. This tracking then enables both the exclusion of irrelevant speech signals
+    natural cortical rhythms (discussed in Section \ref{innateBrainRhythms}) and the envelope following
+    response is still not completely understood, and its functional role remains a subject of debate.
+    There is abundant evidence that broad-spectrum EEG signals can be used to decode which speaker is
+    being attended to by a subject in a cocktail party scenario \cite{Horton2014,DeTaillez2018}, but
+    these studies only offer a partial picture of the role of cortical envelope-following responses
+    in speech comprehension.
+
+    For instance, Zion Golumbic et al. \cite{ZionGolumbic2013} were able to
+    localize the envelope tracking response both in terms of cortical location as well as which frequency
+    band was recruited for entrainment using electrocorticography (ECoG) in a cocktail party scenario with
+    two speakers. They found found that there is a significant ability to predict which speaker is being
+    attended in two different frequency bands that they term `low-frequency' (1-7 Hz) and `high gamma' (70-150 Hz).
+    Further, they found that cortical locations in which these two frequency bands possessed significant
+    predictive power differed. Both showed a very strong response in the superior temporal gyrus,
+    which is to be expected given that is the location of the early cortical auditory areas,
+    but the high gamma band showed a more widespread distribution around the brain, while the low-frequency band
+    was more concentrated in frontal and temporal areas.
+
+    These findings point to the conclusion that the envelope following response is not monolithic, and
+    that there are multiple functional roles filled by the envelope following response.
+
+    One of the most popular theories currently is that speech signals
+    are essentially a quasi-rhythmic input which certain innate cortical rhythms are recruited to track. T
+    This tracking then enables both the exclusion of irrelevant speech signals
     \cite{Horton2014,OSullivan2015} as well as the syllabic parsing that is thought to be accomplished
     by the innate theta oscillations in the cortex \cite{Doelling2014,Ghitza2013}.
 
