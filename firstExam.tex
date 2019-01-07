@@ -21,7 +21,7 @@ style=numeric
 \graphicspath{ {images/} }
 
 
-\title{Spoken Language:\\ Acoustic Properties and Neural Processing}
+\title{Oscillatory Mechanics in the Perception of Spoken Language}
 \author{Ivan Iotzov}
 \date{September 2018}
 
@@ -37,373 +37,25 @@ style=numeric
 
 \section{Introduction} \label{intro}
 
-  The ability to communicate large amounts of information through the use of
-  language is an invaluable ability that, while perhaps not uniquely human,
-  appears to find its richest expression in humans. This ability is critical to
-  socialization, cognition, and the human internal monologue, among many other functions.
-  Language is remarkably complex, with layers of information being encoded
-  into incredibly dense chunks that then must be decoded in real time in order to make
-  communication possible. Processing of speech has two distinct but interrelated
-  components that the brain links together to make linguistic communication possible.
-  The basic defininition of linguistic communication of information is the ability
-  of a speaker of some language to produce a literally infinite number of expressions
-  that are understandable and interpretable by a speaker of the same language.
-  These twin processes of production and reception take place on a number of levels
-  that can be analyzed, to some degree, independently of one another.
+  In recent years there has been great progress made in the domain
+  of decoding human speech processing, and this review is intended
+  to serve as an overview of some of that work, specifically in the 
+  domain of how neural ocsillations, both innate and exogenously 
+  generated, factor into speech processing. The first chapter will 
+  serve as a general overview of the auditory processing system in 
+  humans, while the second will go over the available literature in 
+  detail, comparing and contrasting the various methods and results 
+  used by people in this field. 
 
-
-  The first is acoustic, involving the detection of a sound and its various features
-  and the transduction of this continuous acoustic input into discrete neural representations.
-  The second is linguistic, involving the relation of the neural signals representing
-  some acoustic features to words, ideas, and actions.
-  Both of these components must work in harmony for speech processing to proceed
-  smoothly and efficiently, but they nevertheless represent very different sets
-  of computations in the brain.
-
-
-  At its most basic, a spoken sentence consists of a series of noises
-  created by the human speech system, which can include the lips, teeth, tongue,
-  nose, throat, lungs, and larynx. The study of speech sounds constitutes the
-  phonetic level of language.
-
-
-  Beyond this is the phonemic level, which involves the organization
-  of phonetic elements into larger words, etc. Building on this is the
-  lexical level of analysis, looking at individual words and their meaning, as
-  well as how those meanings can change based on context. Syntax looks at how these lexical
-  elements are organized into larger sentences meant to express a complete thought. Finally,
-  there is the level of semantics, which looks at how higher-level meaning is encoded
-  and decoded in language and how the lower level elements combine to
-  allow for the expression of complex thoughts and ideas through sound.
-
-  The research and analysis of language and speech can take place at any of these
-  levels, or can span them. The goal of this review is to serve as a primer
-  on the lower levels of speech processing in the human brain, as well as the
-  acoustic properties of the speech signals that drive those neural responses.
-
-  One of the most fundamental questions in the field is whether language processing
-  is accomplished by a general architecture that is also applied to all other sounds
-  that are captured by the ear, or whether language has a special set of processing
-  rules that apply only to it \cite{Uddin2018}. There is evidence to support both
-  conclusions, with some arguing that language is not a special case at all, and all
-  of the functions that we see when examining the language faculties in humans can be
-  explained by a general, distributed network that is applied an all acoustic analysis
-  \cite{Dick2001}. Other see the structure of human language and its uniqueness in the
-  animal kingdom \cite{Chomsky1986,Fodor1983} as an indication that there is special
-  architecture that supports its use and comprehension.
-
-  I will address some of these questions
-  through the entrainment hypothesis that is discussed heavily in Ch. \ref{corticalEntrainment}.
-  A truly general architecture seems insufficient for the complex task of language processing,
-  but it is sufficient to explain a number of observable phenomena surrounding the human
-  language processing ability. Therefore I will be championing the idea that the initial stages
-  of linguistic comprehension in the brain are general processes that are dependent on the unique
-  features of language (namely its rhythmicity and predictable structure in time), but that
-  later stages of semantic or prosodic understanding necessitate a special processing stream.
-
-\section{Acoustic Properties of Language} \label{acoustics}
-
-  The breadth and variety of human languages is rather staggering, with
-  the current count of languages spoken across the world at \textasciitilde 7000 \cite{Simons2017}.
-  There are about 800 languages spoken in Papua New Guinea alone, making it the
-  most linguistically diverse region in the world. Among these 7000 languages
-  there are an equally staggering number of speech sounds that are produced by humans
-  (see Fig.\ref{ipaChart} for a sample). One of the primary challenges of both
-  linguists and neuroscientists working in the area of speech processing is
-  how the human brain is capable of dealing with information that comes in such a diverse
-  array of languages, each with their own lexicon, rules regarding grammatical construction,
-  word ordering and gendering, etc.
-
-  Despite all this variation, every human language is intelligible to those that speak it.
-  Indeed, the ability to learn langauges outside of one's native langauge points to the
-  universality of the mechanisms on which speech comprehension is built. Fundamentally,
-  langauge is a process of encoding some information into an acoustic signal that can
-  be transmitted and then easily received and decoded by others. All languages rely on
-  the human vocal system for transmission and the human auditory system for receipt
-  and therefore share some fundamental properties. These include the quasi-periodic
-  properties of langauge, as well as the hierarchical structure that defines all
-  grammars. Without a particular cadence, spoken language becomes unintelligible,
-  and without the hierarchical structure that relates sounds to words to sentences,
-  it becomes unintelligible.
-
-  Therefore, the approach to understanding the mechanisms of speech comprehension
-  is to abstract away from the level of languages and to deal with how the human
-  brain processes speech sounds, and how these speech sounds are then related to one
-  another to form the hierarchical structure of a language.
-  While there may be a huge diversity of speech sounds and an almost infinite number of ways
-  to combine these sounds into words, all speech sounds can be represented as
-  complex acoustic signals which are received by the cells inside the ear
-  and eventually processed by the same brain areas. So, we turn now to examining the
-  features of human speech.
-
-
-  \begin{figure}
-    %\centering
-    \makebox[\textwidth][c]{\includegraphics[scale=0.62]{ipaChart}}
-    \caption{The International Phonetic Alphabet as defined by the International
-    Phonetic Association}
-    \label{ipaChart}
-  \end{figure}
-
-  \subsection{The Speech Chain}
-
-    The speech chain is a concept that was first popularized by Peter Denes \cite{Denes1993}
-    in the eponymous book. The basic concept is that there is a chain of information forming
-    an unbroken pathway from the idea that the speaker is trying to convey, to the meaning that
-    is interpreted by the listener. In this chain (illustrated in Fig.\ref{speechChain}), information
-    is transformed in a number of ways when moving from a speaker's intention to a listener's
-    understanding. But, for the purposes of this review, it is important to recognize the
-    conceptual contribution of treating speech comprehension as a hierarchical process
-    that extracts information from an acoustic signal and passes it up a chain of increasing
-    complexity until the content of the message is decoded. In this context, we can then move
-    to model the stages of the human speech comprehension system as transformations of
-    various types on the fundamental speech input signal.
-
-
-    One useful example of this kind of modeling is shown in the critical band theory of hearing.
-    As sound signals travel through the tympanic membrane and into the inner ear, they
-    eventually stimulate the basilar membrane of the cochlea.
-    This theory is based on the experimental observation, described further in Section 3.2,
-    that the frequency analysis performed
-    by the basilar membrane is not uniform. Rather, the membrane is more sensitive
-    to some frequencies than it is to others
-    \cite{Fastl2007,Rabiner2007}. This varying sensitivity can be described by the equation:
-    \begin{equation} \label{eq:1}
-      \Delta f_c=25+75[1+1.4(f_c/1000)^2]^{0.69}
-    \end{equation}
-    $\Delta f_c$ represents the bandwidth associated with a frequency $f_c$ and increases
-    as the frequency $f_c$ increases.
-    In section \ref{early}, there is further discussion of the physiological
-    basis of speech comprehension in
-    humans and the various ways in which those processes can be modeled.
-
-
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.3]{speechChain}
-      \caption{The chain of transformations that constitute the `speech chain' as
-      described by Denes \cite{Denes1993,Rabiner2007}}
-      \label{speechChain}
-    \end{figure}
-
-  \subsection{Classes of Phonemes}
-
-    Phonemes can either be classified by their acoustic properties,
-    or by the mode of their generation in natural human speech. In the latter
-    method, they are typically divided into stops, nasals, fricatives, laterals, rhotics,
-    clicks, and vowels \cite{Ladefoged1996}. Though, no language makes use of every speech sound
-    that can be produced by the human vocal tract, and some sounds are found much
-    more rarely than others. These distinctions are far more useful for the linguistic analysis
-    of speech than they are for the acoustic analysis, so we turn to the main acoustic
-    differentiation of speech sounds: periodic, voiced speech versus aperiodic, unvoiced speech.
-    The difference between these two can be clearly seen from both their waveforms, as well as
-    their frequency domain spectra (See Fig.\ref{exampleSpectrogram}).
-
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.23]{exampleSpectrogram}
-      \caption{Waveform and 3D Spectrogram of the phrase `Should we chase' \cite{Rabiner2007}}
-      \label{exampleSpectrogram}
-    \end{figure}
-
-
-    The differences between these two classes of speech sounds is explained
-    through differences in their modes of production. For instance, the unvoiced
-    fricative \textipa{[S]} (the first syllable in Fig.\ref{exampleSpectrogram})
-    looks like random noise, while the voiced vowel \textipa{[U]} appears to have
-    a definite structure with periodic features. This is because \textipa{[S]} is
-    produced by the constriction of airflow out of the mouth through use of the tongue,
-    while \textipa{[U]} is produced by the modification of vibrations generated in the
-    vocal cords. The fact that voiced sounds are generated by vocal cord vibrations gives
-    them a special structure that makes them much easier to identify in the context of
-    feature extraction, and makes them important markers in computer speech recognition
-    \cite{Gutierrez-Osuna2017}.
-
-    How the brain parses differences between different types of phonemes, particularly
-    those that lack discernable spectral content (such as fricatives) is still an area
-    of active study. The ability to discern between meaningless noise and a meaningful
-    phoneme must rely on information outside of just the spectral content of the
-    speech signal itself, as the two might be indistinguishable based on just this information.
-    Instead, it is likely that timing and rhythm play an important role in the differentiation
-    of speech sounds. The order and precise timing of the delivery of a speech sound has a
-    strong effect on how it is perceived and these context effects have strong influences on
-    the human perception of speech and language.
-
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.3]{vowelDuration}
-      \caption{Average duration of a selection of vowels under three different
-      speaking conditions from one speaker \cite{Umeda1975}}
-      \label{vowelDuration}
-    \end{figure}
-
-  \subsection{Speech Formants}
-
-    An important feature of voiced speech sounds that seems to be critical in their
-    recognition are the formants of the vowel sound. Formants are defined as being distinctive
-    frequency components of a speech signal that are generated by the resonance
-    of the human vocal tract \cite{Denes1993}. They can be seen clearly in the speech spectrogram
-    (See Fig. \ref{formants}) as areas of particularly high energy within a certain frequency band.
-    Formants come about due to the resonance of the vocal tract. By moving the articulators
-    (lips, tongue, etc.), the size and shape of the cavities in the vocal tract are altered and
-    therefore so are the resonant frequencies. All vowel sounds are produced through this manipulation
-    of the resonant frequencies of the vocal tract which gives them a characteristic, periodic
-    structure that can be readily identified.
-
-
-    By convention, vowel formants are assigned numbers in order of ascending frequency. So, the
-    lowest frequency formant of a vowel is assigned $F_1$, the next lowest $F_2$, and so on.
-    Many vowels can be distinguished from one another simply by the use of these first
-    two formants \cite{Schnupp2011}, making them important markers in both human and computer
-    speech recognition. For example, the vowels in Fig.\ref{formants} can be differentiated
-    from one another simply by reference to their $F_1$ and $F_2$ frequencies. The importance
-    of these formants to biological auditory comprehension was demonstrated in part by
-    Young and Sachs (1979) \cite{Young1979}, who showed that auditory nerve discharges in
-    response to auditory stimuli reflect the formants when vowels are presented.
-
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=1.6]{formants}
-      \caption{Spectrogram of a native speaker of American English
-      pronouncing the vowels \textipa{[i, u, A]} \cite{pict}.}
-      \label{formants}
-    \end{figure}
-
-  \subsection{Rhythms in Speech} \label{rhythmsInSpeech}
-
-    Fundamentally, speech is rhythmic. It consists of a series of events that have a
-    systematic timing and build from smaller components, such as phonemes, into larger
-    structures, such as words and sentences, that have their own rhythms as well. The
-    cause of this perception of rhythm is the fluctuation of sound intensity over time.
-    In the case of speech, modulations less than 16 Hz, with a notable peak at 3-5 Hz,
-    are the basis for the syllabic rhythm \cite{Giraud2012,Greenberg2003}.
-
-    One way to characterize these rhythms is through analysis of the modulation spectrum of
-    speech. The modulation spectrum is `the spectrum of the temporal envelope of sound and
-    reflects how fast sound intensity fluctuates over time' \cite{Ding2017}. In a study of
-    a large audio corpus of 9 languages, Ding et al. (2017) \cite{Ding2017} found a remarkably
-    consistent peak for the modulation spectrum of spoken language at 2-10 Hz, with a particular
-    peak at \textasciitilde 5 Hz. This same 5Hz rate has also been found in empirical studies of syllabic
-    rate in a number of languages \cite{Pellegrino2011} and seems to be a consistent, intrinsic
-    property of speech, regardless of the language that is being spoken.
-
-    These temporal modulations are likely important to the processing of spoken language in the
-    brain as they provide consistent acoustic landmarks for the chunking of incoming acoustic
-    signals into discrete units that can then be decoded. The existence of this type of rhythmic
-    structure in speech
-
-\section{Early Auditory Processing} \label{early}
-
-  \subsection{The Outer and Middle Ear}
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.32]{earDiagram}
-      \caption{Diagram of the ear from the outer ear to the auditory nerve \cite{Fastl2007}.}
-      \label{earDiagram}
-    \end{figure}
-
-    Fig.\ref{earDiagram} shows the structure of the human ear and its three sections that
-    are responsible for the processing of sound: the outer, middle, and inner ear \cite{Schnupp2011,Rabiner2007}.
-    The outer ear, mainly the pinna, functions to redirect sound waves into the ear canal and
-    also has an important role related to spatial localization of sounds, particularly in the vertical axis \cite{Kandel2000}.
-    The middle ear consists mainly of a series of small bones, known as the ossicles, connected
-    to the tympanic membrane towards the outside and to the oval window of the cochlea on
-    the inside. These ossicles mainly serve to transform the vibrations in the air into mechanical
-    vibrations within themselves via the tympanic membrane. Finally, the inner ear consists of the
-    cochlea, which is the one of the most important structures in human hearing. The cochlea is the
-    organ that translates the frequency components of an acoustic signal into neural impulses that
-    are then transmitted to the brain via the auditory nerve.
-
-  \subsection{The Cochlea and Basilar Membrane}
-
-    The cochlea is one of the most important structures in early auditory processing,
-    in that it serves to analyze the spectrum of incoming acoustic signals and then
-    conducts that information along the auditory nerve to higher brain areas.
-    It does this through a structure known as the basilar membrane, which is a
-    membrane that is wound up in the cochlea and serves as the mechanism by which
-    vibrations are transduced into neural impulses \cite{Kandel2000}. For the purposes
-    of this review, the most important structure in the cochlea is the basilar membrane.
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.30]{basilarMembrane}
-      \caption{Illustration of the unwound cochlea from the helicotrema (left), where low
-      frequency sounds are detected, to the oval window (right), where high
-      frequency sounds are detected. The number of steps (on the musical
-      scale), and the ratio pitch as measured on the mel scale are linear, but the
-      frequency response is not.}
-      \label{basilarMembrane}
-    \end{figure}
-
-    The basilar membrane does this through the mechanical properties that it exhibits.
-    It is narrow and stiff at the base of the membrane, where the high frequency sounds
-    are detected, becoming more wide and flexible towards the apex of the membrane, the
-    site of low frequency sound detection. This divergence in the mechanical properties
-    of the membrane along its length allows it to function as a spectral analyzer
-    and encode neural representations of the power spectral density of an acoustic signal.
-    In essence, the basilar membrane performs
-    spectral analysis on complex sounds by being sensitive to different frequencies
-    along its length. The mechanical vibrations at these various sites then excite
-    the hair cells that are present in those positions, which send neural impulses along
-    the fibers that innervate that particular region of the membrane \cite{Kandel2000}.
-    The functioning of the basilar membrane also determines the physical limits of
-    human hearing in ideal circumstances (without noise, hearing loss, etc.), falling
-    at approximately 20 Hz - 20 kHz \cite{Rabiner2007}.
-
-    The intensity of a sound, or frequency band within a complex sound, is encoded
-    by the basilar membrane as well. The more intense a sound within a particular
-    frequency range, the more intense the vibration and thus the stimulation of the
-    hair cells at that point in the membrane. This detection of sound intensity
-    is not equal at all frequencies, though. First described by Fletcher and Munson
-    and later refined by other researchers, human loudness perception can be modeled
-    as a function of frequency (at least in the case of pure tones) \cite{Fastl2007,Fletcher1933,Kandel2000}.
-    These curves are still known as Fletcher-Munson curves in honor of the researchers
-    that first described them and they compare the intensity of a sound (measured in $dB_{SPL}$)
-    with the perceived loudness of that sound (measured in $phon$). As show in Fig. \ref{fletcherMunsonCurve},
-    humans are most sensitive to sounds falling within the range of \textasciitilde 2 - 4 kHz and
-    are least sensitive to sounds at the lowest ends of the spectrum (\textless 200Hz).
-
-    These findings form the basis for the critical-band theory of human auditory
-    perception that is summarized in Eq. \ref{eq:1} in which the basilar membrane
-    acts as a bank of band-pass filters that are tuned to be more sensitive
-    to some frequencies compared to others.
-
-
-    \begin{figure}
-      \centering
-      \includegraphics[scale=0.3]{fletcherMunsonCurveWithUnits}
-      \caption{Equal-loudness curves in humans. Those defined by the ISO 226:2003 revision
-      are show in red and are the accepted standard as of 2014.
-      The original Fletcher-Munson curves are shown in blue.}
-      \label{fletcherMunsonCurve}
-    \end{figure}
-
-  \subsection{Critical Band Theory}
-
-    Understanding this early processing of acoustic signals performed by the
-    basilar membrane is crucial to understanding many of the characteristics
-    of human auditory perception and therefore speech perception. The varied
-    sensitivity of the basilar membrane to signals of different frequencies
-    is responsible for both the unequal loudness perception of the human
-    auditory system, as well as the nonlinear nature of pitch perception
-    illustrated in Fig. \ref{basilarMembrane}. Crucially,
-    the responses of these hair cells and the signals that they send along the auditory nerve are the sole
-    acoustic inputs that feed into cortical auditory areas and are therefore crucial to understanding
-    the processing being done in these higher-level areas. Additionally, this model of cochlear responses to
-    acoustic stimuli as a bank of band-pass filters is important in providing temporal information, such
-    as the modulation of a frequency modulated (FM) signal, in addition to the spectral information that it
-    is tuned for.
-
-    The human auditory system uses the basilar membrane as a mechanical
-    means by which to convert an incoming acoustic signal into the frequency
-    domain, but does so in a way that is limited by the mechanical properties
-    of the membrane itself. This transformation can be accurately modeled using a
-    technique known as mel-frequency cepstrum coefficient (MFCC) analysis \cite{Davis1980,Noll1967}.
+  First, it is important to delineate the scope of this review. I 
+  will be writing specifically about spoken language processing, 
+  both in contexts of speech in noise and clean auditory stimuli.
+  I will not be discussing speech production or the perception of 
+  written language, but only auditory speech processing. Additionally, 
+  I will confine myself to the `lower' levels of speech processing,
+  i.e. the various statistics of the speech signals itself, to the 
+  exclusion of `higher' level factors such as lexical and semantic 
+  properties.
 
 \section{Cortical Auditory Processing} \label{corticalAuditoryProcessing}
 
@@ -418,13 +70,17 @@ style=numeric
   the superior olive, the inferior colliculus, the medial geniculate nucleus of
   the thalamus, and finally to the primary auditory cortex
   \cite{Hickok2007,Webster1992}. This outline of the auditory pathway is
-  clearly a large oversimplification. Brainstem and subcortical innervation
+  a gross oversimplification but useful for this review as it shows that 
+  there is some processing of incoming speech signals being done before the
+  neural impulse reaches the brain. Brainstem and subcortical innervation
   sites are more numerous than described above, and there are also significant
   efferent connections from the higher auditory processing areas all the way
   down to the cochlear neurons themselves \cite{Kandel2000,Webster1992}. This
   overview is meant to provide a rough sketch to demonstrate the hierarchical
   and interconnected nature of the auditory processing pathways as well as to
   give a general view of how information proceeds from the ear to the cortex.
+  Here, we will mainly concern ourselves with the processing of neural signals
+  once they reach the primary auditory cortex and other related areas.
 
 
   This pathway shares some features of the visual processing pathway. It is
@@ -523,64 +179,6 @@ style=numeric
     and that the methods for extracting this information involve separate
     cortical processing mechanisms.
 
-  \subsection{Broca, Wernicke, and Heschl}
-
-    In the following section, I will review three brain areas critical to
-    speech perception outside of A1. These are Heschl's gyrus, Wernicke's 
-    area, and Broca's area. Each of these brain regions form part of the network
-    that is responsible for speech perception and play distinct, but
-    interrelated, roles in the perception of spoken langauge.
-
-    [section on Heschl]
-
-    Central to any analysis of speech perception is Heschl's Gyrus (HG). Named 
-    in honor of the Austrian anatomist Richard Heschl, who is considered the
-    first to describe transverse temporal gyrus, this area is critical to all
-    auditory perception, including speech perception. HG is located in the 
-    lateral sulcus, primarily consisting of Brodmann's areas 41 \& 42.
-
-    [section on Wernicke]
-
-    Broca's area has been a well known area of language processing since
-    Pierre Paul Broca, in 1861, described two patients that had lost the
-    ability to speak following damage to the inferior frontal gyrus
-    \cite{Dronkers2007}. The condition resulting from damage to this area,
-    characterized by problems with fluency in speaking and difficulty with
-    complex grammar, is called Broca's aphasia. Today, Broca's area is also
-    defined by the Brodmann areas 44 and 45, or the pars opercularis and pars
-    triangularis, and continues to be a heavily studied area of the brain.
-
-    Broca's area has been historically associated with speech
-    production through numerous lesion studies and case studies of aphasic
-    patients \cite{Dronkers2007}. It was also found to have significant
-    connections both to motor control areas, such as the premotor cortex,
-    as well as to other language areas, such as Wernicke's area, through the
-    arcuate fasciculus and other pathways \cite{Friederici2011}. These findings
-    further reinforced the idea of Broca's area as, primarily, a facilitator of
-    sound-to-motor mappings. Though it was originally believed that Broca's
-    area was mainly involved in
-    speech production rather than comprehension, more recent evidence suggests
-    that it is involved in speech comprehension as well. In
-    particular, evidence from PET and fMRI studies points to the role of Broca's
-    area in the processing of syntactically complex or semantically ambiguous
-    sentences \cite{Rodd2005,Ojanen2005,Zurif1980}. Some studies have found
-    evidence that this area is also involved in more low-level phonetic or
-    semantic processes \cite{Zatorre1992}, though this remains controversial
-    and the subject of ongoing debate \cite{Hickok2013,Friederici2011}. Though
-    there is evidence that BA 44 \& 45 play a role in speech comprehension, there
-    is also significant evidence from Wada procedures and congenitally anarthric
-    patients that the loss of motor speech production capacities does not
-    preclude the ability to comprehend speech \cite{Hickok2013}.
-
-
-  \subsection{Speech Comprehension vs. Speech Production}
-
-    There is ongoing debate about the involvement of speech production
-    circuits in speech comprehension. There are multiple competing theories
-    about this. Some claim that speech production circuits, through
-    mirror neuron type mechanisms, are essential for speech comprehension
-    to function properly. Others claim that speech production circuits are not
-    necessary at all for the proper functioning of speech comprehension.
 
 \section{Entrainment} \label{entrainment}
 
@@ -829,18 +427,6 @@ style=numeric
     `sites' of entrainment and that neural oscillations can be entrained to
     multiple features of a stimulus.
 
-\section{Connecting Sounds with Meanings} \label{meaning}
-
-  Up to this chapter the discussion in this paper has mainly focused around the
-  transduction of incoming acoustic speech signals into some type of neural
-  representation. This computation serves as the basis for speech comprehension
-  and any complete account of the human ability to understand complex
-  hierarchical speech is incomplete without it. Now I will turn to a very brief
-  account of the next stage of the language comprehension process, which is
-  the connection of these neural representations of incoming speech signals
-  with internal lexical and semantic representations that ultimately give rise
-  to the \textit{understanding} of speech, rather than the mere
-  \textit{representation} of speech.
 
 \newpage
 % \nocite{*}
