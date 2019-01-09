@@ -5,7 +5,11 @@
 % \modulolinenumbers[2]
 \usepackage[
 backend=biber,
-style=numeric
+style=numeric,
+doi=false,
+isbn=false,
+url=false,
+eprint=false
 ]{biblatex}
 \addbibresource{firstExamRefs.bib}
 % \addbibresource{secondaryRefs.bib}
@@ -42,7 +46,8 @@ style=numeric
   to serve as an overview of some of that work, specifically in the 
   domain of how neural oscillations, both innate and exogenously 
   generated, factor into speech processing. In this introduction I will review
-  some basic properties of speech signals as well as a brief overview of the 
+  some basic properties of auditory speech signals as well as a brief overview 
+  of the 
   various endogenous oscillations that can be measured in the brain. The first 
   chapter will go into more detail on endogenous oscillations in the brain and 
   their theorized role in speech processing. The second chapter will present 
@@ -53,13 +58,18 @@ style=numeric
 
   First, it is important to delineate the scope of this review. I 
   will be writing specifically about spoken language processing, 
-  both in contexts of speech in noise and clean auditory stimuli.
-  I will not be discussing speech production or the perception of 
-  written language, but only auditory speech processing. Additionally, 
-  I will confine myself to the `lower' levels of speech processing,
-  i.e. the various statistics of the speech signals itself, to the 
-  exclusion of `higher' level factors such as lexical and semantic 
-  properties.
+  both in contexts of speech-in-noise and clean auditory stimuli.
+  I will attempt to minimize discussion of other linguistic topics that 
+  may be related, such as speech production or reading, though some inclusion 
+  of behaviors that rely on the same neural architecture is unavoidable.
+  Additionally, I will attempt to constrain the discussion below as much as 
+  possible to phonemic and syllabic levels rather than straying into lexical 
+  and semantic issues.
+
+  \subsection{Language Rhythms}
+
+    Spoken language can be roughly categorized as 
+
 
 \section{Cortical Auditory Processing} \label{corticalAuditoryProcessing}
 
