@@ -25,7 +25,7 @@ eprint=false
 \graphicspath{ {images/} }
 
 
-\title{Oscillatory Mechanics in the Perception of Spoken Language}
+\title{Neural Oscillations and the \\ Perception of Spoken Language}
 \author{Ivan Iotzov}
 \date{September 2018}
 
@@ -41,84 +41,178 @@ eprint=false
 
 \section{Introduction} \label{intro}
 
-  In recent years there has been great progress made in the domain
-  of decoding human speech processing, and this review is intended
-  to serve as an overview of some of that work, specifically in the 
-  domain of how neural oscillations, both innate and exogenously 
-  generated, factor into speech processing. In this introduction I will review
-  some basic properties of auditory speech signals as well as a brief overview 
-  of the 
-  various endogenous oscillations that can be measured in the brain. The first 
-  chapter will go into more detail on endogenous oscillations in the brain and 
-  their theorized role in speech processing. The second chapter will present 
-  differing theories that are more grounded in exogenous, stimulus-driven 
-  processes than those in the first. Lastly, in the conclusion, I will attempt
-  to integrate these perspectives and point to interesting avenues for future
-  study.
+  Great progress has been made in recent years on the goal
+  of decoding the neural computations that undergird 
+  human speech processing. This review is intended
+  to serve as a brief overview of this work, focusing especially on 
+  neural oscillations. I will be examining the role of
+  both spontaneous and exogenously driven neural oscillations 
+  in speech processing. In this introduction I will review
+  some basic properties of auditory speech signals, as well as the putative 
+  origin and function of various endogenous oscillations that have been 
+  measured in the brain. The second 
+  chapter will go into more detail on the goals and methods of the auditory 
+  processing system in general, and the third chapter will be dedicated to 
+  discussing the endogenous oscillations in the brain, their interaction with 
+  stimulus-driven exogenous oscillations, and the theorized role of these 
+  oscillations in speech processing. Lastly, I will attempt
+  to integrate all of this information and draw broader conclusions about 
+  the functional role of these oscillations in speech processing and avenues 
+  for future work that would fill gaps in the literature.
 
-  First, it is important to delineate the scope of this review. I 
-  will be writing specifically about spoken language processing, 
-  both in contexts of speech-in-noise and clean auditory stimuli.
-  I will attempt to minimize discussion of other linguistic topics that 
-  may be related, such as speech production or reading, though some inclusion 
-  of behaviors that rely on the same neural architecture is unavoidable.
-  Additionally, I will attempt to constrain the discussion below as much as 
-  possible to phonemic and syllabic levels rather than straying into lexical 
-  and semantic issues.
+  % First, it is important to delineate the scope of this review. 
+  % I will be writing specifically about spoken language processing
+  % and so I will attempt to avoid discussion of other, related linguistic topics,
+  % such as speech production, reading, etc. 
+  % Additionally, I will attempt to limit the discussion below as much as 
+  % possible to the processes that parse and then section the incoming auditory 
+  % stimulus into usable auditory `objects' \cite{Poeppel2008} that feed into 
+  % further lexical and semantic analysis.
 
-  \subsection{Language Rhythms}
+  \subsection{Speech Rhythms}
 
-    Spoken language can be roughly categorized as 
+    Spoken language can be roughly categorized as a quasi-periodic, 
+    hierarchically organized, sequence of auditory events that encode some 
+    information. In \textit{The Speech Chain} \cite{Denes1993}, Peter Denes 
+    elegantly laid out the encoding, decoding, and processing that must take 
+    place in order for some information to successfully be transferred from one
+    person to another in the form of speech (See Fig.\ref{speechChain})
+
+    The speech chain is a concept that was first popularized by Peter Denes \cite{Denes1993}
+    in the eponymous book. The basic concept is that there is a chain of information forming
+    an unbroken pathway from the idea that the speaker is trying to convey, to the meaning that
+    is interpreted by the listener. In this chain (illustrated in Fig.\ref{speechChain}), information
+    is transformed in a number of ways when moving from a speaker's intention to a listener's
+    understanding. But, for the purposes of this review, it is important to recognize the
+    conceptual contribution of treating speech comprehension as a hierarchical process
+    that extracts information from an acoustic signal and passes it up a chain of increasing
+    complexity until the content of the message is decoded. In this context, we can then move
+    to model the stages of the human speech comprehension system as transformations of
+    various types on the fundamental speech input signal.
+
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.3]{speechChain}
+      \caption{The chain of transformations that constitute the `speech chain' as
+      described by Denes \cite{Denes1993,Rabiner2007}}
+      \label{speechChain}
+    \end{figure}
 
     % REVIEW THIS
     One of the most fundamental questions in the field is whether language processing
-  is accomplished by a general architecture that is also applied to all other sounds
-  that are captured by the ear, or whether language has a special set of processing
-  rules that apply only to it \cite{Uddin2018}. There is evidence to support both
-  conclusions, with some arguing that language is not a special case at all, and all
-  of the functions that we see when examining the language faculties in humans can be
-  explained by a general, distributed network that is applied an all acoustic analysis
-  \cite{Dick2001}. Other see the structure of human language and its uniqueness in the
-  animal kingdom \cite{Chomsky1986,Fodor1983} as an indication that there is special
-  architecture that supports its use and comprehension.
-  % REVIEW THIS
+    is accomplished by a general architecture that is also applied to all other sounds
+    that are captured by the ear, or whether language has a special set of processing
+    rules that apply only to it \cite{Uddin2018}. There is evidence to support both
+    conclusions, with some arguing that language is not a special case at all, and all
+    of the functions that we see when examining the language faculties in humans can be
+    explained by a general, distributed network that is applied an all acoustic analysis
+    \cite{Dick2001}. Other see the structure of human language and its uniqueness in the
+    animal kingdom \cite{Chomsky1986,Fodor1983} as an indication that there is special
+    architecture that supports its use and comprehension.
+    % REVIEW THIS
 
-  % THIS NEEDS TO BE CUT DOWN  
-  The breadth and variety of human languages is rather staggering, with
-  the current count of languages spoken across the world at \textasciitilde 7000 \cite{Simons2017}.
-  There are about 800 languages spoken in Papua New Guinea alone, making it the
-  most linguistically diverse region in the world. Among these 7000 languages
-  there are an equally staggering number of speech sounds that are produced by humans
-  (see Fig.\ref{ipaChart} for a sample). One of the primary challenges of both
-  linguists and neuroscientists working in the area of speech processing is
-  how the human brain is capable of dealing with information that comes in such a diverse
-  array of languages, each with their own lexicon, rules regarding grammatical construction,
-  word ordering and gendering, etc.
+    % THIS NEEDS TO BE CUT DOWN  
+    The breadth and variety of human languages is rather staggering, with
+    the current count of languages spoken across the world at \textasciitilde 7000 \cite{Simons2017}.
+    There are about 800 languages spoken in Papua New Guinea alone, making it the
+    most linguistically diverse region in the world. Among these 7000 languages
+    there are an equally staggering number of speech sounds that are produced by humans
+    (see Fig.\ref{ipaChart} for a sample). One of the primary challenges of both
+    linguists and neuroscientists working in the area of speech processing is
+    how the human brain is capable of dealing with information that comes in such a diverse
+    array of languages, each with their own lexicon, rules regarding grammatical construction,
+    word ordering and gendering, etc.
 
-  Despite all this variation, every human language is intelligible to those that speak it.
-  Indeed, the ability to learn languages outside of one's native language points to the
-  universality of the mechanisms on which speech comprehension is built. Fundamentally,
-  language is a process of encoding some information into an acoustic signal that can
-  be transmitted and then easily received and decoded by others. All languages rely on
-  the human vocal system for transmission and the human auditory system for receipt
-  and therefore share some fundamental properties. These include the quasi-periodic
-  properties of language, as well as the hierarchical structure that defines all
-  grammars. Without a particular cadence, spoken language becomes unintelligible,
-  and without the hierarchical structure that relates sounds to words to sentences,
-  it becomes unintelligible.
+    Despite all this variation, every human language is intelligible to those that speak it.
+    Indeed, the ability to learn languages outside of one's native language points to the
+    universality of the mechanisms on which speech comprehension is built. Fundamentally,
+    language is a process of encoding some information into an acoustic signal that can
+    be transmitted and then easily received and decoded by others. All languages rely on
+    the human vocal system for transmission and the human auditory system for receipt
+    and therefore share some fundamental properties. These include the quasi-periodic
+    properties of language, as well as the hierarchical structure that defines all
+    grammars. Without a particular cadence, spoken language becomes unintelligible,
+    and without the hierarchical structure that relates sounds to words to sentences,
+    it becomes unintelligible.
 
-  Therefore, the approach to understanding the mechanisms of speech comprehension
-  is to abstract away from the level of languages and to deal with how the human
-  brain processes speech sounds, and how these speech sounds are then related to one
-  another to form the hierarchical structure of a language.
-  While there may be a huge diversity of speech sounds and an almost infinite number of ways
-  to combine these sounds into words, all speech sounds can be represented as
-  complex acoustic signals which are received by the cells inside the ear
-  and eventually processed by the same brain areas. So, we turn now to examining the
-  features of human speech.
-  % THIS NEEDS TO BE CUT DOWN
+    Therefore, the approach to understanding the mechanisms of speech comprehension
+    is to abstract away from the level of languages and to deal with how the human
+    brain processes speech sounds, and how these speech sounds are then related to one
+    another to form the hierarchical structure of a language.
+    While there may be a huge diversity of speech sounds and an almost infinite number of ways
+    to combine these sounds into words, all speech sounds can be represented as
+    complex acoustic signals which are received by the cells inside the ear
+    and eventually processed by the same brain areas. So, we turn now to examining the
+    features of human speech.
 
-\section{Cortical Auditory Processing} \label{corticalAuditoryProcessing}
+    Fundamentally, speech is rhythmic. It consists of a series of events that have a
+    systematic timing and build from smaller components, such as phonemes, into larger
+    structures, such as words and sentences, that have their own rhythms as well. The
+    cause of this perception of rhythm is the fluctuation of sound intensity over time.
+    In the case of speech, modulations less than 16 Hz, with a notable peak at 3-5 Hz,
+    are the basis for the syllabic rhythm \cite{Giraud2012,Greenberg2003}.
+
+    One way to characterize these rhythms is through analysis of the modulation spectrum of
+    speech. The modulation spectrum is `the spectrum of the temporal envelope of sound and
+    reflects how fast sound intensity fluctuates over time' \cite{Ding2017}. In a study of
+    a large audio corpus of 9 languages, Ding et al. (2017) \cite{Ding2017} found a remarkably
+    consistent peak for the modulation spectrum of spoken language at 2-10 Hz, with a particular
+    peak at \textasciitilde 5 Hz. This same 5Hz rate has also been found in empirical studies of syllabic
+    rate in a number of languages \cite{Pellegrino2011} and seems to be a consistent, intrinsic
+    property of speech, regardless of the language that is being spoken.
+
+    These temporal modulations are likely important to the processing of spoken language in the
+    brain as they provide consistent acoustic landmarks for the chunking of incoming acoustic
+    signals into discrete units that can then be decoded. The existence of this type of rhythmic
+    structure in speech
+    % THIS NEEDS TO BE CUT DOWN
+
+  \subsection{Endogenous Brain Rhythms}
+
+    There exist a number of neural rhythms that are innately present in the
+    human brain. Roughly speaking, these are divided into $\alpha$ (8 - 12 Hz),
+    $\beta$ (12 - 30 Hz), $\theta$ (4 - 8 Hz), $\delta$ (1 - 4 Hz), $\gamma$
+    (30 - 80 Hz), and high $\gamma$ (80 - 150 Hz)
+    \cite{Muresan2008,Rangaswamy2002}. These are roughly divided by the
+    frequency of the oscillations and their suspected behavioral correlates.
+    There is clearly overlap between these categorizations and it is difficult
+    to make very clear distinctions between the various classes of neural
+    oscillations. Despite this, there are some clear behavioral correlates in
+    each of these frequency bands, and there have been attempts to localize the
+    neural circuits responsible for their generation \cite{Michel1992}.
+
+    Some of these rhythms are particularly relevant for the study of speech
+    processing as they appear to have the same frequency as the typical speech
+    rhythm and their power in EEG signals increases as a function of
+    intelligibility. Particularly important to speech processing appear to be
+    the $\delta$, $\gamma$, and $\theta$ rhythms \cite{Ghitza2009,Meyer2018}.
+    In the case of the $\theta$ rhythm, Oded Ghitza has been a particularly
+    strong advocate for the idea that the $\theta$ rhythm is crucial to parsing
+    the speech signal into syllabic chunks which are the fundamental unit of
+    speech processing. He refers to this fundamental unit as the
+    `theta-syllable' \cite{Ghitza2013a} and claims that it is central to the
+    theory of speech comprehension as a faculty facilitated by cortical
+    entrainment to speech signals. In this view, the theta-syllable is defined
+    as `a theta-cycle long speech segment located between two successive vocalic
+    nuclei'. A vocalic nucleus is the critical section of a syllable (often a
+    vowel) that can be preceded or followed by other marginal sounds (often
+    consonants). For example, the word \textit{window} can be divided into the
+    syllables \textipa{/"wIn/} and \textipa{/doU/}. In the \textipa{/"wIn/}
+    syllable, the \textipa{/I/} sound functions as the nucleus while the
+    \textipa{/w/} and \textipa{/n/} sounds are on the margins of that nucleus.
+
+    In this interpretation, the theta rhythm is essentially the `master' rhythm
+    that is responsible for the main chunking of the incoming speech stimulus
+    and leads to the efficient parsing of syllables. This is crucial to
+    understanding speech comprehension because of one of the most important
+    mysteries in this area is how the brain chunks information into syllables
+    that can then be parsed and transformed into higher-order representations.
+    Without the ability to transform incoming acoustic information into smaller
+    `chunks', the brain would have no ability to separate out syllabic
+    information and parse what the speech information in a given chunk of time
+    is. Instead, it would appear more as an undifferentiated mass.
+
+\section{Neural Auditory Processing} \label{corticalAuditoryProcessing}
 
   In the above sections, the emphasis has been on the properties of the
   acoustic stimulus itself, its important features, and the mechanisms by
@@ -241,7 +335,7 @@ eprint=false
     cortical processing mechanisms.
 
 
-\section{Entrainment} \label{entrainment}
+\section{Entrainment \& Stimulus-Driven Dynamics} \label{entrainment}
 
   \subsection{Brainstem Entrainment} \label{brainstemEntrainment}
 
@@ -318,51 +412,6 @@ eprint=false
     parse out what is necessary for the comprehension of speech and what
     information is supplemental, but not necessary to the bare comprehension
     of speech.
-
-  \subsection{Innate Brain Rhythms} \label{innateBrainRhythms}
-
-    There exist a number of neural rhythms that are innately present in the
-    human brain. Roughly speaking, these are divided into $\alpha$ (8 - 12 Hz),
-    $\beta$ (12 - 30 Hz), $\theta$ (4 - 8 Hz), $\delta$ (1 - 4 Hz), $\gamma$
-    (30 - 80 Hz), and high $\gamma$ (80 - 150 Hz)
-    \cite{Muresan2008,Rangaswamy2002}. These are roughly divided by the
-    frequency of the oscillations and their suspected behavioral correlates.
-    There is clearly overlap between these categorizations and it is difficult
-    to make very clear distinctions between the various classes of neural
-    oscillations. Despite this, there are some clear behavioral correlates in
-    each of these frequency bands, and there have been attempts to localize the
-    neural circuits responsible for their generation \cite{Michel1992}.
-
-    Some of these rhythms are particularly relevant for the study of speech
-    processing as they appear to have the same frequency as the typical speech
-    rhythm and their power in EEG signals increases as a function of
-    intelligibility. Particularly important to speech processing appear to be
-    the $\delta$, $\gamma$, and $\theta$ rhythms \cite{Ghitza2009,Meyer2018}.
-    In the case of the $\theta$ rhythm, Oded Ghitza has been a particularly
-    strong advocate for the idea that the $\theta$ rhythm is crucial to parsing
-    the speech signal into syllabic chunks which are the fundamental unit of
-    speech processing. He refers to this fundamental unit as the
-    `theta-syllable' \cite{Ghitza2013a} and claims that it is central to the
-    theory of speech comprehension as a faculty facilitated by cortical
-    entrainment to speech signals. In this view, the theta-syllable is defined
-    as `a theta-cycle long speech segment located between two successive vocalic
-    nuclei'. A vocalic nucleus is the critical section of a syllable (often a
-    vowel) that can be preceded or followed by other marginal sounds (often
-    consonants). For example, the word \textit{window} can be divided into the
-    syllables \textipa{/"wIn/} and \textipa{/doU/}. In the \textipa{/"wIn/}
-    syllable, the \textipa{/I/} sound functions as the nucleus while the
-    \textipa{/w/} and \textipa{/n/} sounds are on the margins of that nucleus.
-
-    In this interpretation, the theta rhythm is essentially the `master' rhythm
-    that is responsible for the main chunking of the incoming speech stimulus
-    and leads to the efficient parsing of syllables. This is crucial to
-    understanding speech comprehension because of one of the most important
-    mysteries in this area is how the brain chunks information into syllables
-    that can then be parsed and transformed into higher-order representations.
-    Without the ability to transform incoming acoustic information into smaller
-    `chunks', the brain would have no ability to separate out syllabic
-    information and parse what the speech information in a given chunk of time
-    is. Instead, it would appear more as an undifferentiated mass.
 
   \subsection{Phase Entrainment}
 
@@ -496,6 +545,11 @@ eprint=false
     about entrainment of signals in the brain there are multiple different
     `sites' of entrainment and that neural oscillations can be entrained to
     multiple features of a stimulus.
+
+
+\section{Conclusion}
+
+    \blindtext
 
 
 \newpage
