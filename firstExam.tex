@@ -79,12 +79,18 @@ eprint=false
     person to another in the form of speech (See Fig.\ref{speechChain})
 
     In this chain (illustrated in Fig.\ref{speechChain}), information
-    is transformed in a number of ways when moving from a speaker's intention to a listener's
-    understanding. But, for the purposes of this review, it is important to recognize the
-    conceptual contribution of treating speech comprehension as a hierarchical process
-    that extracts information from an acoustic signal and passes it up a chain of increasing
-    complexity until the content of the message is decoded. In this context, we can then move
-    to model the stages of the human speech comprehension system as transformations of
+    is transformed in a number of ways when moving from a speaker's intention 
+    to a listener's
+    understanding. But, for the purposes of this review, it is important to 
+    recognize the
+    conceptual contribution of treating speech comprehension as a hierarchical 
+    process
+    that extracts information from an acoustic signal and passes it up a chain 
+    of increasing
+    complexity until the content of the message is decoded. In this context, 
+    we can then move
+    to model the stages of the human speech comprehension system as 
+    transformations of
     various types on the original speech input signal.
 
     \begin{figure}
@@ -126,40 +132,75 @@ eprint=false
     16 Hz, with a notable peak at 3-5 Hz, are the basis for the syllabic rhythm 
     \cite{Giraud2012,Greenberg2003}.
 
-    One way to characterize these rhythms is through analysis of the modulation spectrum of
-    speech. The modulation spectrum is defined as 
+    One way to characterize these rhythms is through analysis of the 
+    modulation spectrum of speech. The modulation spectrum is defined as 
     `the spectrum of the temporal envelope of sound and
-    reflects how fast sound intensity fluctuates over time' \cite{Ding2017}. In a study of
-    a large audio corpus of 9 languages, Ding et al. \cite{Ding2017} found a remarkably
-    consistent peak for the modulation spectrum of spoken language at 2-10 Hz, with a particular
-    peak at \textasciitilde 5 Hz. This same 5Hz rate has also been found in empirical studies of syllabic
-    rate in a number of languages \cite{Pellegrino2011} and seems to be a consistent, intrinsic
+    reflects how fast sound intensity fluctuates over time' \cite{Ding2017}. 
+    In a study of
+    a large audio corpus of 9 languages, Ding et al. \cite{Ding2017} found a 
+    remarkably
+    consistent peak for the modulation spectrum of spoken language at 2-10 Hz, 
+    with a particular
+    peak at \textasciitilde 5 Hz. This same 5Hz rate has also been found in 
+    empirical studies of syllabic
+    rate in a number of languages \cite{Pellegrino2011} and seems to be a 
+    consistent, intrinsic
     property of speech, regardless of the language that is being spoken.
 
-    These temporal modulations are likely important to the processing of spoken language 
-    as they provide consistent acoustic landmarks for the chunking of incoming acoustic
-    signals into discrete units that can then be decoded. Examination of the 
-    modulation spectrum has not been the only method of measuring the rhythmic 
+    These temporal modulations are likely important to the processing of 
+    spoken language as they provide consistent acoustic landmarks for the 
+    chunking of incoming acoustic signals into discrete units that can then be 
+    decoded. Examination of the modulation spectrum has not been the only 
+    method of measuring the rhythmic 
     aspects of speech. There is a rich literature in the field of linguistics 
     dealing with how and on what basis different languages are arranged in time.
     In this system of classification that has been developed, languages can be 
-    stress-timed, syllable-timed \cite{Ramus2000}. Stress-timed 
+    stress-timed or syllable-timed \cite{Nakatani1981,Dauer1983}. Stress-timed 
     languages (such as English or Dutch) rely on a series of stressed or 
     un-stressed syllables to generate the rhythm that is perceived in speech. 
     Syllable-timed languages (such as French) rely only on the timing of the 
-    syllables themselves, and not on the stresses that are placed on them. 
+    syllables themselves, and not on the stresses that are placed on them. Note
+    that Japanese has been placed in a class of its own, said to have a unique 
+    mora based timing scheme.
+
+    This effort by linguists to classify languages into different timing 
+    schemes is primarily an effort to force the quasi-periodic rhythm of human 
+    speech into a more isochronous form. If there is an underlying isochronicity
+    below the relatively messy rhythms that are present in natural language, 
+    then there is a relatively easy way to describe how humans can perceive 
+    speech that is independent of language and can also be easily compared to 
+    the perception of musical rhythms which are fundamentally based in their 
+    isochronicity. 
+
+    This paradigm has been challenged in a number of ways 
+    \cite{Ramus2000,Grabe2002}, with critics primarily pointing to the 
+    subjective and often contradictory classification of languages that can 
+    change based on the corpus of speech used and the judgments of the 
+    observer. The problem of classification in this paradigm has led some 
+    to focus solely on stress timing as a rhythmic framework in all languages 
+    \cite{Hayes198433,Martin1972}. This framework also has some empirical 
+    justification as several ERP studies have found that the brain can detect 
+    violations of expected stress patterns 
+    \cite{Rothermich2012,Knaus2007,Haegens2018}.
     
     \subsubsection{Classes of Phonemes}
 
     Phonemes can either be classified by their acoustic properties,
     or by the mode of their generation in natural human speech. In the latter
-    method, they are typically divided into stops, nasals, fricatives, laterals, rhotics,
-    clicks, and vowels \cite{Ladefoged1996}. Though, no language makes use of every speech sound
-    that can be produced by the human vocal tract, and some sounds are found much
-    more rarely than others. These distinctions are far more useful for the linguistic analysis
-    of speech than they are for the acoustic analysis, so we turn to the main acoustic
-    differentiation of speech sounds: periodic, voiced speech versus aperiodic, unvoiced speech.
-    The difference between these two can be clearly seen from both their waveforms, as well as
+    method, they are typically divided into stops, nasals, fricatives, 
+    laterals, rhotics,
+    clicks, and vowels \cite{Ladefoged1996}. Though, no language makes use of 
+    every speech sound
+    that can be produced by the human vocal tract, and some sounds are found 
+    much
+    more rarely than others. These distinctions are far more useful for the 
+    linguistic analysis
+    of speech than they are for the acoustic analysis, so we turn to the main 
+    acoustic
+    differentiation of speech sounds: periodic, voiced speech versus aperiodic, 
+    unvoiced speech.
+    The difference between these two can be clearly seen from both their 
+    waveforms, as well as
     their frequency domain spectra (See Fig.\ref{exampleSpectrogram}).
 
 
@@ -204,26 +245,42 @@ eprint=false
 
   \subsubsection{Speech Formants}
 
-    An important feature of voiced speech sounds that seems to be critical in their
-    recognition are the formants of the vowel sound. Formants are defined as being distinctive
+    An important feature of voiced speech sounds that seems to be critical 
+    in their
+    recognition are the formants of the vowel sound. Formants are defined as 
+    being distinctive
     frequency components of a speech signal that are generated by the resonance
-    of the human vocal tract \cite{Denes1993}. They can be seen clearly in the speech spectrogram
-    (See Fig. \ref{formants}) as areas of particularly high energy within a certain frequency band.
-    Formants come about due to the resonance of the vocal tract. By moving the articulators
-    (lips, tongue, etc.), the size and shape of the cavities in the vocal tract are altered and
-    therefore so are the resonant frequencies. All vowel sounds are produced through this manipulation
-    of the resonant frequencies of the vocal tract which gives them a characteristic, periodic
+    of the human vocal tract \cite{Denes1993}. They can be seen clearly in the 
+    speech spectrogram
+    (See Fig. \ref{formants}) as areas of particularly high energy within a 
+    certain frequency band.
+    Formants come about due to the resonance of the vocal tract. By moving 
+    the articulators
+    (lips, tongue, etc.), the size and shape of the cavities in the vocal tract 
+    are altered and
+    therefore so are the resonant frequencies. All vowel sounds are produced 
+    through this manipulation
+    of the resonant frequencies of the vocal tract which gives them a 
+    characteristic, periodic
     structure that can be readily identified.
 
 
-    By convention, vowel formants are assigned numbers in order of ascending frequency. So, the
-    lowest frequency formant of a vowel is assigned $F_1$, the next lowest $F_2$, and so on.
-    Many vowels can be distinguished from one another simply by the use of these first
-    two formants \cite{Schnupp2011}, making them important markers in both human and computer
-    speech recognition. For example, the vowels in Fig.\ref{formants} can be differentiated
-    from one another simply by reference to their $F_1$ and $F_2$ frequencies. The importance
-    of these formants to biological auditory comprehension was demonstrated in part by
-    Young and Sachs (1979) \cite{Young1979}, who showed that auditory nerve discharges in
+    By convention, vowel formants are assigned numbers in order of ascending 
+    frequency. So, the
+    lowest frequency formant of a vowel is assigned $F_1$, the next lowest 
+    $F_2$, and so on.
+    Many vowels can be distinguished from one another simply by the use of 
+    these first
+    two formants \cite{Schnupp2011}, making them important markers in both 
+    human and computer
+    speech recognition. For example, the vowels in Fig.\ref{formants} can 
+    be differentiated
+    from one another simply by reference to their $F_1$ and $F_2$ frequencies. 
+    The importance
+    of these formants to biological auditory comprehension was demonstrated 
+    in part by
+    Young and Sachs (1979) \cite{Young1979}, who showed that auditory nerve 
+    discharges in
     response to auditory stimuli reflect the formants when vowels are presented.
 
 
@@ -403,7 +460,14 @@ eprint=false
     cortical processing mechanisms.
 
 
-\section{Entrainment \& Stimulus-Driven Dynamics} \label{entrainment}
+\section{Neural Entrainment \& Stimulus-Driven Dynamics} \label{entrainment}
+
+  Entrainment is defined as the synchronization of two or more oscillators 
+  that can generate their own rhythms in the absence of any rhythmic input. In
+  the cases that will be discussed below, the oscillators are a neural 
+  population, and a rhythmic input stimulus (i.e. speech). This definition is 
+  intended to contrast the frequency and phase entrainment responses with 
+  others, such as the envelope-following response.
 
   \subsection{Brainstem Entrainment} \label{brainstemEntrainment}
 
@@ -444,52 +508,31 @@ eprint=false
     level of the ear limits its usefulness in studying cortical processing of 
     auditory input.
 
-  \subsection{Cortical Entrainment} \label{corticalEntrainment}
+  \subsection{Cortical Entrainment and Envelope Following} \label{corticalEntrainment}
 
     In addition to entrainment occurring in the brainstem, it is also possible
     to measure cortical entrainment in response to acoustic stimuli with methods
     such as electroencephalography and magnetoencephalography. This type of
     entrainment typically has the best correspondence to the temporal
-    modulation of the speech signal
-    \cite{Ding2014a,Ding2014,Nourski2009,Horton2014}, including both amplitude
-    envelope modulation and frequency modulation. This cortical entrainment
+    modulation of the amplitude envelope of the speech signal
+    \cite{Ding2014a,Ding2014,Nourski2009,Horton2014}. This cortical entrainment
     seems to be linked to a number of behavioral factors, such as attention
     \cite{Dmochowski2016,ZionGolumbic2013} as well as engagement with the
-    stimulus \cite{Dmochowski2017}. This entrainment is clearly an exogenous
+    stimulus \cite{Dmochowski2017}. This entrainment is clearly an exogenous,
     stimulus-driven process, which is illustrated by the consistent responses
     elicited across subjects by the same audio or visual stimuli
     \cite{Cohen2017,Petroni2017}.
 
-    Interestingly, speech remains intelligible despite a large amount of
-    information in the speech signal being destroyed. Speech information is
-    resistant to both degradation of temporal as well as spectral information
-    \cite{Silipo1999,Drullman1994}. Barring total elimination of temporal and
-    spectral information, it is only when both are sufficiently degraded that
-    speech becomes unintelligible \cite{Elliott2009}. Related to this, the
-    phenomenon of speaker gender identification is also reliant on similar
-    information and can be modulated by changing the information present in the
-    temporal and the spectral domain. Elliott and Theunissen \cite{Elliott2009}
-    found that speaker gender identification rate can be significantly
-    degraded by removing spectral modulations between 3 and 7 cycles/Hz and that
-    this specifically reduced the subjects' ability to correctly identify
-    female speakers. They postulated that this is because the female vocal
-    spectrum has more power in this specific range and this is what
-    contributes to `sounding like' a female speaker. Clearly, there is more
-    information than just that necessary for comprehension that is embedded
-    in the temporal and spectral modulations of speech and it is important to
-    parse out what is necessary for the comprehension of speech and what
-    information is supplemental, but not necessary to the bare comprehension
-    of speech.
+    In discussing neural entrainment to any aspect of \\ {\Huge STOPPED HERE}
 
-  \subsection{Phase Entrainment}
-
-    It has been demonstrated that cortical neurons entrain their phase to the
+    It has been demonstrated that cortical neurons entrain to the amplitude
     oscillations present in speech stimuli, but the causal mechanism of this
     entrainment is still being debated in the field. Some claim that it is
-    caused by entrainment to low-level features of speech sounds, basically a
+    caused by entrainment to low-level features of speech sounds 
+    (defined as the sound amplitude and spectral content), basically a
     version of an auditory steady-state potential (such as those found in the
-    brainstem discussed in section \ref{brainstemEntrainment}). Other
-    researchers maintain that this phase entrainment is a product of more
+    brainstem discussed in section \ref{brainstemEntrainment}). Others
+    maintain that this phase entrainment is a product of more
     high-level speech sound features and reflects a processing of information
     carried in the speech signal by the brain.
 
@@ -510,30 +553,38 @@ eprint=false
     envelope is remains a topic of debate in the field, but there has recently
     been strong evidence to support the hypothesis that cortical entrainment to
     the speech envelope facilitates comprehension of the speech signal
-    \cite{Ding2014a,Ding2012,OSullivan2015}.
+    \cite{Ding2014a,Ding2012,OSullivan2015}. These observations do show that 
+    there is a link between speech intelligibility and stronger neural 
+    entrainment, but it is not possible to tell what the precise cause is. It 
+    could be due to a stronger evoked response to a stimulus that is easier to 
+    hear and understand. Or, it could be due to stronger recruitment of the 
+    oscillatory mechanisms that facilitate the intelligibility of the speech.
 
-
-    This hypothesis is supported by evidence correlating behavioral measures of
-    comprehension of a speech segment to the level of neural envelope-following
-    response that is found. These experiments, though, simply show that neural
-    entrainment and speech comprehension co-occur. On their own, they fail to
-    make the causal connection between neural entrainment and comprehension.
-
-    These envelope-following responses found in response to acoustic stimuli
-    differ from the
-
-  \subsection{Envelope Following and Brain Rhythms}
+    Some studies have looked to address this problem by dissociating these 
+    two possible mechanisms of neural entrainment. One by K{\"o}sem et al.
+    \cite{Kosem2017} attempted to do this by quickly changing the speech 
+    rate at the end of a sentence. If the observed neural entrainment to the 
+    stimulus is indeed caused by internal oscillatory mechanics, then these 
+    oscillators would entrain to the initial part of the sentence and when the 
+    speech rate is changed at the end of the sentence, it will be mis-perceived.
+    This is indeed what they found. Participants were asked to indicate whether 
+    they heard a short \textipa{[A]} or a long \textipa{[a:]} at the end of the 
+    sentence, and their answer was dependent on whether the speech preceding 
+    this vowel was presented at a fast or a slow rate. This study points to the 
+    fact that neural entrainment does not simply reflect an evoked response 
+    to low level features of the speech input, but an endogenous, ongoing 
+    neural process of speech parsing that influences our perception. 
 
     The fact that cortical neurons track the amplitude envelope of speech
     signals is now well-known and is considered an important part of the speech
     processing pathway. But, the interaction between natural cortical rhythms
     (discussed in Section \ref{endogenousBrainRhythms}) and the envelope following
     response is still not completely understood, and its functional role remains
-     a subject of debate. There is abundant evidence that broad-spectrum EEG
-     signals can be used to decode which speaker is being attended to by a
-     subject in a cocktail party scenario \cite{Horton2014,DeTaillez2018}, but
-     these studies only offer a partial picture of the role of cortical
-     envelope-following responses in speech comprehension.
+    a subject of debate. There is abundant evidence that broad-spectrum EEG
+    signals can be used to decode which speaker is being attended to by a
+    subject in a cocktail party scenario \cite{Horton2014,DeTaillez2018}, but
+    these studies only offer a partial picture of the role of cortical
+    envelope-following responses in speech comprehension.
 
     For instance, Zion Golumbic et al. \cite{ZionGolumbic2013} were able to
     localize the envelope tracking response both in terms of cortical location
@@ -559,6 +610,27 @@ eprint=false
     irrelevant speech signals \cite{Horton2014,OSullivan2015} as well as the
     syllabic parsing that is thought to be accomplished by the innate theta
     oscillations in the cortex \cite{Doelling2014,Ghitza2013b}.
+
+    Interestingly, speech remains intelligible despite a large amount of
+    information in the speech signal being destroyed. Speech information is
+    resistant to both degradation of temporal as well as spectral information
+    \cite{Silipo1999,Drullman1994}. Barring total elimination of temporal and
+    spectral information, it is only when both are sufficiently degraded that
+    speech becomes unintelligible \cite{Elliott2009}. Related to this, the
+    phenomenon of speaker gender identification is also reliant on similar
+    information and can be modulated by changing the information present in the
+    temporal and the spectral domain. Elliott and Theunissen \cite{Elliott2009}
+    found that speaker gender identification rate can be significantly
+    degraded by removing spectral modulations between 3 and 7 cycles/Hz and that
+    this specifically reduced the subjects' ability to correctly identify
+    female speakers. They postulated that this is because the female vocal
+    spectrum has more power in this specific range and this is what
+    contributes to `sounding like' a female speaker. Clearly, there is more
+    information than just that necessary for comprehension that is embedded
+    in the temporal and spectral modulations of speech and it is important to
+    parse out what is necessary for the comprehension of speech and what
+    information is supplemental, but not necessary to the bare comprehension
+    of speech.
 
     This brings up a large controversy in this field of study, which is the
     question of whether neural entrainment occurs because of the recruitment of
